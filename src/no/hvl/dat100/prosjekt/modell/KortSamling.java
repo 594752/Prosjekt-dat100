@@ -23,9 +23,8 @@ public class KortSamling {
 	public KortSamling() {
 		
 		// TODO - START
-		samling = new Kort[MAKS_KORT];
-		antall = 0;
-		//throw new UnsupportedOperationException(TODO.constructor("KortSamling"));
+		
+		throw new UnsupportedOperationException(TODO.constructor("KortSamling"));
 		// TODO - END
 	}
 
@@ -53,9 +52,7 @@ public class KortSamling {
 		
 		// TODO - START
 		
-		return antall;
-		
-		//throw new UnsupportedOperationException(TODO.method());
+		throw new UnsupportedOperationException(TODO.method());
 		
 		// TODO - END
 	}
@@ -68,9 +65,8 @@ public class KortSamling {
 	public boolean erTom() {
 		
 		// TODO - START
-			
-		return antall <= 0;
-		//throw new UnsupportedOperationException(TODO.method());
+				
+		throw new UnsupportedOperationException(TODO.method());
 		
 		// TODO - END
 	}
@@ -84,9 +80,8 @@ public class KortSamling {
 	public void leggTil(Kort kort) {
 		
 		// TODO - START
-		samling[antall] = kort;
-		antall++;
-		//throw new UnsupportedOperationException(TODO.method());
+		
+		throw new UnsupportedOperationException(TODO.method());
 		// TODO - END
 		
 	}
@@ -99,12 +94,8 @@ public class KortSamling {
 		
 		// TODO - START
 		// Husk: bruk Regler.MAKS_KORT_FARGE for å få antall kort per farge
-		antall = 0;
-		fjernAlle();
-		for(int i = 1; i <= 13; i++) {
-			
-		}
-		//throw new UnsupportedOperationException(TODO.method());
+		
+		throw new UnsupportedOperationException(TODO.method());
 		// TODO - END
 	}
 
@@ -114,11 +105,8 @@ public class KortSamling {
 	public void fjernAlle() {
 		
 		// TODO - START
-		for(int i = 0; i < samling.length; i++) {
-			samling[i] = null;
-		}
-		antall = 0;
-		//throw new UnsupportedOperationException(TODO.method());
+		
+		throw new UnsupportedOperationException(TODO.method());
 		// TODO - END
 	}
 	
@@ -131,10 +119,8 @@ public class KortSamling {
 	public Kort seSiste() {
 		
 		// TODO - START
-		if(antall < 1) return null;
-		Kort siste = samling[antall - 1];
-		return siste;
-		//throw new UnsupportedOperationException(TODO.method());
+		
+		throw new UnsupportedOperationException(TODO.method());
 
 		// TODO - END
 		
@@ -149,11 +135,8 @@ public class KortSamling {
 	public Kort taSiste() {
 		
 		// TODO - START
-		if(antall < 1) return null;
-		Kort k = samling [antall - 1];
-		samling [antall - 1] = null;
-		antall--;				
-		return k;
+		
+		throw new UnsupportedOperationException(TODO.method());
 		
 		// TODO - END
 	}
@@ -168,12 +151,8 @@ public class KortSamling {
 	public boolean har(Kort kort) {
 		
 		// TODO - START
-		boolean har = false;
-		for(int i = 0; i < samling.length; i++) {
-			har = samling[i] == kort;
-		}
-		return har;
-		//throw new UnsupportedOperationException(TODO.method());
+		
+		throw new UnsupportedOperationException(TODO.method());
 		// return false;
 		// TODO - END
 		
@@ -192,16 +171,8 @@ public class KortSamling {
 	public boolean fjern(Kort kort) {
 		
 		// TODO - START
-		boolean har = false;
-		for(int i = 0; i < samling.length; i++) {
-			har = samling[i] == kort;
-			if(har) {
-				samling[i] = null;
-			}
-		}
-		return har;
 		
-		//throw new UnsupportedOperationException(TODO.method());
+		throw new UnsupportedOperationException(TODO.method());
 
 		// TODO - END
 	}

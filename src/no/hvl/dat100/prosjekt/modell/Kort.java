@@ -112,7 +112,6 @@ public class Kort implements Comparable<Kort> {
 	 * @return true om kortene ha samme farge og samme verdi, false ellers.
 	 */
 	public boolean lik(Kort kort) {
-		
 		return ((this.farge == kort.getFarge()) && (this.verdi == kort.getVerdi()));
 		
 	}

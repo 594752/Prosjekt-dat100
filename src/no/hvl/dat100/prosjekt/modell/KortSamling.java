@@ -84,8 +84,17 @@ public class KortSamling {
 	public void leggTil(Kort kort) {
 		
 		// TODO - START
-		samling[antall] = kort;
-		antall++;
+		int i = 0;
+		boolean lagttil = false;
+		while(i < samling.length && !lagttil) {
+			if(samling[i] == null) {
+				samling[i] = kort;
+				antall++;
+				lagttil = true;
+			}
+			i++;
+		}
+		
 		//throw new UnsupportedOperationException(TODO.method());
 		// TODO - END
 		

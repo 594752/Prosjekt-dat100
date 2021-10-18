@@ -19,7 +19,6 @@ public abstract class Regler {
 	}
 	
 	public static boolean kanLeggeNed(Kort kort, Kort topp) {
-		
 		return kort.sammeFarge(topp) || kort.sammeVerdi(topp) || atter(kort);
 		
 	}

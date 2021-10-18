@@ -20,7 +20,7 @@ public class KortUtils {
 	public static void sorter(KortSamling samling) {
 		Kort[] kortsamling = samling.getAllekort();
 		// TODO - START		
-		for(int i = 0; i < kortsamling.length; i++) {
+		for(int i = 1; i < kortsamling.length; i++) {
 			int j = i;
 			while(j > 0 && (kortsamling[j-1].compareTo(kortsamling[j]) > 0)) {
 				Kort k = kortsamling[j];

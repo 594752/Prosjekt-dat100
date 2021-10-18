@@ -167,11 +167,13 @@ public class Spill {
 				
 				// Gå igjennom kort å finn ut hvilke som kan spilles
 				for (Kort k : hand) {
-					if (Regler.kanLeggeNed(k, bord.seOversteBunkeTil())) {
-						if (Regler.atter(k)) {
-							attere.leggTil(k);
-						} else {
-							lovlige.leggTil(k);
+					if(k != null && bord.seOversteBunkeTil() != null) {
+						if (Regler.kanLeggeNed(k, bord.seOversteBunkeTil())) {
+							if (Regler.atter(k)) {
+								attere.leggTil(k);
+							} else {
+								lovlige.leggTil(k);
+							}
 						}
 					}
 				}

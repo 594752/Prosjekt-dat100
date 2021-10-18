@@ -89,6 +89,7 @@ public class KortSamling {
 		//throw new UnsupportedOperationException(TODO.method());
 		// TODO - END
 		
+		
 	}
 	
 	/**
@@ -100,10 +101,13 @@ public class KortSamling {
 		// TODO - START
 		// Husk: bruk Regler.MAKS_KORT_FARGE for å få antall kort per farge
 		antall = 0;
-		fjernAlle();
-		for(int i = 1; i <= 13; i++) {
-			
+		for(Kortfarge f : Kortfarge.values()) {
+			for(int i = 1; i <= Regler.MAKS_KORT_FARGE; i++) {
+				samling [antall] = new Kort(f, i);
+				antall++;
+			}
 		}
+		
 		//throw new UnsupportedOperationException(TODO.method());
 		// TODO - END
 	}
@@ -169,8 +173,11 @@ public class KortSamling {
 		
 		// TODO - START
 		boolean har = false;
+		if(kort == null) return false;
 		for(int i = 0; i < samling.length; i++) {
-			har = samling[i] == kort;
+			if(samling[i] != null) {
+				if(kort.lik(samling[i])) har = true;
+			}
 		}
 		return har;
 		//throw new UnsupportedOperationException(TODO.method());
@@ -193,10 +200,15 @@ public class KortSamling {
 		
 		// TODO - START
 		boolean har = false;
-		for(int i = 0; i < samling.length; i++) {
-			har = samling[i] == kort;
-			if(har) {
-				samling[i] = null;
+		if(kort == null) return false;
+		if(antall < 1) return false;
+		for(int i = 0; i < MAKS_KORT; i++) {
+			if(samling[i] != null) {
+				if(kort.lik(samling[i])) {
+					antall--;
+					samling [i] = null;
+					har = true;
+				}
 			}
 		}
 		return har;
@@ -215,8 +227,17 @@ public class KortSamling {
 	public Kort[] getAllekort() {
 		
 		// TODO - START
+		Kort[] nysamling = new Kort[(antall)];
+		int a = 0;
+		for(int i = 0; i < samling.length; i++) {
+			if(samling[i] != null) {
+				nysamling[a] = samling[i];
+				a++;
+			}
+		}
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return nysamling;
+		//throw new UnsupportedOperationException(TODO.method());
 
 		// TODO - END
 	

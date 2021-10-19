@@ -30,14 +30,11 @@ public class Spill {
 	
 	public Spill() {
 		
-		// TODO - START
 		nord = new NordSpiller(Spillere.NORD);
 		syd = new SydSpiller(Spillere.SYD);
 		
 		bord = new Bord();		
 		
-		//throw new UnsupportedOperationException(TODO.constructor("Spill"));
-		// TODO - END
 		
 	}
 	
@@ -48,11 +45,7 @@ public class Spill {
 	 */
 	public Bord getBord() {
 		
-		// TODO - START
 		return bord;
-		//throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - END
 		
 	}
 	
@@ -63,12 +56,7 @@ public class Spill {
 	 */
 	public ISpiller getSyd() {
 		
-		// TODO - START
-		
 		return syd;
-		//throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - END
 		
 	}
 
@@ -79,12 +67,8 @@ public class Spill {
 	 */
 	public ISpiller getNord() {
 		
-		// TODO - START
-
 		return nord;
-		//throw new UnsupportedOperationException(TODO.method());
 
-		// TODO - END
 	}
 
 	/**
@@ -98,11 +82,8 @@ public class Spill {
 	 */
 	public void start() {
 		
-		// TODO - START
 		delutKort();
 		bord.vendOversteFraBunke();
-		//throw new UnsupportedOperationException(TODO.method());
-		// TODO - END
 	}
 
 	/**
@@ -112,13 +93,10 @@ public class Spill {
 	 */
 	private void delutKort() {
 
-		// TODO - START
 		for(int i = 0; i < Regler.ANTALL_KORT_START; i++) {
 			nord.leggTilKort(bord.taOversteFraBunke());
 			syd.leggTilKort(bord.taOversteFraBunke());
 		}
-		//throw new UnsupportedOperationException(TODO.method());
-		// TODO - END
 	}
 
 	/**
@@ -133,7 +111,6 @@ public class Spill {
 	 */
 	public Kort trekkFraBunke(ISpiller spiller) {
 
-		// TODO - START
 		Kort k = bord.taOversteFraBunke();
 		if(k == null) {
 			bord.snuTilBunken();
@@ -141,9 +118,7 @@ public class Spill {
 		}
 		spiller.trekker(k);
 		return k;
-//		throw new UnsupportedOperationException(TODO.method());
 
-		// TODO - END
 	}
 
 	/**
@@ -154,18 +129,13 @@ public class Spill {
 	 * 
 	 * @return handlingen som blir utført.
 	 */
-	public Handling nesteHandling(ISpiller spiller) {
+	public Handling nesteHandling(ISpiller spiller) {		
 		
 		
-		
-		// TODO - START
-		
-		// ArrayLister for de kort vi har og kan spille
 				Kort[] hand = spiller.getHand().getAllekort();
 				KortSamling lovlige = new KortSamling();
 				KortSamling attere = new KortSamling();
 				
-				// Gå igjennom kort å finn ut hvilke som kan spilles
 				for (Kort k : hand) {
 					if(k != null && bord.seOversteBunkeTil() != null) {
 						if (Regler.kanLeggeNed(k, bord.seOversteBunkeTil())) {
@@ -195,20 +165,14 @@ public class Spill {
 					int p = r.nextInt(spillFra.length);
 					spill = spillFra[p];
 					handling = new Handling(HandlingsType.LEGGNED, spill);
-					// setAntallTrekk(0);
 					
 				} else if (spiller.getAntallTrekk() < Regler.maksTrekk()) {
 					handling = new Handling(HandlingsType.TREKK, null);
 				} else {
 					handling = new Handling(HandlingsType.FORBI, null);
-					// setAntallTrekk(0);
 				}
 
 				return handling;
-		
-		//throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - END
 		
 	}
 
@@ -226,16 +190,13 @@ public class Spill {
 	 */
 	public boolean leggnedKort(ISpiller spiller, Kort kort) {
 		
-		// TODO - START
 		if(spiller.getHand().har(kort)) {
 			bord.leggNedBunkeTil(kort);
 			spiller.fjernKort(kort);
 			spiller.setAntallTrekk(0);
 			return true;
 		} else return false;
-		//throw new UnsupportedOperationException(TODO.method());
 
-		// TODO - END
 	}
 
 	/**
@@ -247,11 +208,8 @@ public class Spill {
 	 */
 	public void forbiSpiller(ISpiller spiller) {
 		
-		// TODO - START
-		
 		spiller.setAntallTrekk(0);
 	
-		// TODO - END
 	}
 
 	/**
@@ -267,7 +225,6 @@ public class Spill {
 	 */
 	public Kort utforHandling(ISpiller spiller, Handling handling) {
 
-		// TODO - START
 		Kort k = null;
 		if(handling.getType() == HandlingsType.FORBI) {
 			forbiSpiller(spiller);
@@ -285,9 +242,6 @@ public class Spill {
 		// om noen andre private metoder i klassen kan brukes
 		// til å implementere denne metoden
 				
-		//throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - END
 	}
 
 }
